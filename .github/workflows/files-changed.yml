@@ -29,7 +29,7 @@ permissions:
 jobs:
   files_changed:
     name: Files Changed
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: dorny/paths-filter@v2
         id: changed

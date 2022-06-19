@@ -7,7 +7,7 @@ jobs:
 
   messaging:
     name: Messaging
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: files_changed
     if: needs.files_changed.outputs.messaging == 'true'
     steps:
@@ -27,7 +27,7 @@ jobs:
   # Taken from: https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md#local-cache
   messaging_docker:
     name: Messaging (Docker)
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: files_changed
     if: needs.files_changed.outputs.messaging == 'true'
     steps:
@@ -60,7 +60,7 @@ jobs:
 
   webchat:
     name: Webchat
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: files_changed
     if: needs.files_changed.outputs.webchat == 'true'
     steps:
@@ -79,7 +79,7 @@ jobs:
 
   studio:
     name: Studio
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: files_changed
     if: needs.files_changed.outputs.studio == 'true'
     strategy:
@@ -102,7 +102,7 @@ jobs:
 
   runtime:
     name: Runtime
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: files_changed
     if: needs.files_changed.outputs.runtime == 'true'
     steps:

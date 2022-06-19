@@ -3,7 +3,7 @@ on: [pull_request]
 jobs:
   prettier:
     name: Run Prettier on codebase
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@master
@@ -19,7 +19,7 @@ jobs:
           yarn prettier
   eslint:
     name: Run ESLint on codebase
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@master

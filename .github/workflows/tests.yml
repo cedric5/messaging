@@ -7,7 +7,7 @@ jobs:
 
   unit:
     name: Unit
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: files_changed
     steps:
       - name: Checkout code
@@ -25,7 +25,7 @@ jobs:
 
   integration:
     name: Integration
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         database: ['sqlite', 'postgres']
@@ -61,7 +61,7 @@ jobs:
 
   e2e:
     name: E2E
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         database: ['sqlite', 'postgres']
@@ -97,7 +97,7 @@ jobs:
 
   security:
     name: Security
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         database: ['sqlite', 'postgres']
@@ -133,7 +133,7 @@ jobs:
 
   migration:
     name: Migration
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         database: ['sqlite', 'postgres']
@@ -169,7 +169,7 @@ jobs:
 
   webchat:
     name: Webchat
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         browser: ['chrome', 'firefox']
